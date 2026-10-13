@@ -101,6 +101,14 @@ li {
     margin: 10px 0
 }
 
+.task-points {
+    margin-left: 10px;
+    color: white;
+    background: #3758fb;
+    border-radius: 5px;
+    padding: 4px;
+}
+
 @media(max-width:600px) {
     main {
         margin: 0;
