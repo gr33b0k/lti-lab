@@ -17,7 +17,7 @@ export const tasks = [
     id: "q3",
     prompt:
       "Какой API JavaScript позволяет загружать и компилировать модули WebAssembly?",
-    answer: "webassembly.instantiate",
+    answer: "webassembly",
     points: 4,
   },
 ];
