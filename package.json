@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
-    "start": "node --env-file=.env src/server.mjs",
+    "start": "node src/server.mjs",
     "test": "node --test test/*.test.mjs"
   },
-  "dependencies": { "express": "5.2.1", "ltijs": "7.0.7" }
+  "dependencies": {
+    "express": "5.2.1",
+    "ltijs": "7.0.7"
+  }
 }
