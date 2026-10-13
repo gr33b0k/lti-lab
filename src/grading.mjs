@@ -4,20 +4,28 @@ export const tasks = [
   {
     id: "q1",
     prompt: "Какое расширение файла обычно имеет бинарный модуль WebAssembly?",
-    answer: "wasm",
+    answer: ["wasm", ".wasm"],
     points: 3,
   },
   {
     id: "q2",
     prompt: "Как называется текстовый формат представления WebAssembly?",
-    answer: "wat",
+    answer: ["wat", ".wat"],
     points: 3,
   },
   {
     id: "q3",
-    prompt:
-      "Какой API JavaScript позволяет загружать и компилировать модули WebAssembly?",
-    answer: "webassembly",
+    prompt: "Назовите любой метод WebAssembly для создания экземпляра модуля",
+    answer: [
+      "webassembly.instantiate",
+      "webassembly.instantiateStreaming",
+      "instantiate",
+      "instantiateStreaming",
+      "webassembly.instantiate()",
+      "webassembly.instantiateStreaming()",
+      "instantiate()",
+      "instantiateStreaming()",
+    ],
     points: 4,
   },
 ];
@@ -46,7 +54,7 @@ export function grade(answers) {
         { status: 400 },
       );
     }
-    const correct = normalize(value) === normalize(task.answer);
+    const correct = task.answer.map(normalize).includes(normalize(value));
     return { id: task.id, correct, points: correct ? task.points : 0 };
   });
   return {
